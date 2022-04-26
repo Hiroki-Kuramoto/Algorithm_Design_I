@@ -15,12 +15,12 @@ for i in range(0,2**len(w)):
     # decimal 5 -> binary 011
     # In this case, target means [NotUse,Use,Use].
     maxValue = 0
-    Solution = []
+    Solution = "*"
     target = str(bin(i+2**len(w))).replace("0b1","")
     for j,flag in enumerate(target):
         if flag == "1":
             maxValue += w[j]
-            Solution.append(str(j+1))
+            Solution += f"_{j+1}"
     if W >= maxValue:
         if maxValue > optimalValue:
             optimalSolution = [Solution]
@@ -28,5 +28,6 @@ for i in range(0,2**len(w)):
         elif maxValue == optimalValue:
             optimalSolution.append(Solution)
 
+optimalSolution.reverse()
 print(f"optimalValue {optimalValue}")
 print(f"optimalSolution {optimalSolution}")
