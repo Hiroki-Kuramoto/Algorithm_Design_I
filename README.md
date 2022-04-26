@@ -1,1 +1,19 @@
 # Algorithm_Design_I
+## 概要
+- exhaustiveSearch.py
+  - しらみつぶし法
+- dpSearch.py
+  - 動的計画法
+## データセット
+- tableMaker.pyによりランダムに生成される
+- Setting.jsonには，データセットの詳細設定が記述される
+  - "maxWeight"
+    - 重みの総和・持てる最大の重み
+  - "weightListSize"
+    - 品物の数
+  - "MaxOfItem"
+    - 品物単体の最大の重さ
+  - "MinOfItem"
+    - 品物単体の最小の重さ
+## 実行方法
+- sh exec.sh
