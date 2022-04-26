@@ -7,7 +7,7 @@ with open("./WeightList.txt","r") as f:
     w = f.readlines()
     w = list(map(int,[0]+w))# w[0]はダミー
     n = len(w)-1# w[0]はダミー
-    print(f"w_items = {len(w)}")
+    print(f"w_items = {len(w)-1}")
 
 
 M = [[0 for x in range(W+1)] for y in range(n+1)]
@@ -23,8 +23,6 @@ for i in range(1, n+1):
 print(f"optimalValue {M[n][W]}")
 
 # 最適解を求める
-def myMap(L:list, i:int):
-    f
 def optimalSolutions(i,j):
     if i == 0:
         return ["*"]
