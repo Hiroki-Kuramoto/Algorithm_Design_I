@@ -23,17 +23,16 @@ for i in range(1, n+1):
 print(f"optimalValue {M[n][W]}")
 
 # 最適解を求める
-def optimalSolutions(i,j):
-    if i == 0:
-        return ["*"]
-    elif j < w[i]:
-        return optimalSolutions(i-1,j)
-    elif M[i][j] == M[i-1][j] and M[i][j] == w[i] + M[i-1][j-w[i]]:
-        return optimalSolutions(i-1,j) + [x+f"_{i}" for x in optimalSolutions(i-1,j-w[i])]
-    elif M[i][j] == M[i-1][j]:
-        return optimalSolutions(i-1,j)
-    else:# M[i][j] == w[i] + M[i-1][j-w[i]]:
-        return [x+f"_{i}" for x in optimalSolutions(i-1,j-w[i])]
+optimalSolution = [[["*"] for x in range(W+1)] for y in range(n+1)]
+for i in range(1, n+1):
+    for j in range(W+1):
+        if j < w[i]:
+            optimalSolution[i][j] = optimalSolution[i-1][j]
+        elif M[i][j] == M[i-1][j] and M[i][j] == w[i] + M[i-1][j-w[i]]:
+            optimalSolution[i][j] = optimalSolution[i-1][j] + [x+f"_{i}" for x in optimalSolution[i-1][j-w[i]]]
+        elif M[i][j] == M[i-1][j]:
+            optimalSolution[i][j] = optimalSolution[i-1][j]
+        else:# M[i][j] == w[i] + M[i-1][j-w[i]]:
+            optimalSolution[i][j] = [x+f"_{i}" for x in optimalSolution[i-1][j-w[i]]]
 
-optimalSolution = optimalSolutions(n,W)
-print(f"optimalSolution {optimalSolution}")
+print(f"optimalSolution {optimalSolution[n][W]}")
