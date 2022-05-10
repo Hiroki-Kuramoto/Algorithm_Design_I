@@ -1,5 +1,5 @@
 ## (start, finish, weight)
-## sorted by finish in ascending order
+## in advance, sorted by "finish" in ascending order
 I = [(-1,-1,0),(0,3,1),(2,5,4),(1,6,6),(3,6,2),(4,8,5),(7,10,1),(9,14,7),(12,16,2),(11,17,9),(13,18,3),(15,19,8)]
 
 def main():
