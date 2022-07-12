@@ -1,2 +1,2 @@
-gcc -o franklin franklin.c
-./franklin
+gcc -o exe frederickson-lynch.c
+./exe
